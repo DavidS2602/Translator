@@ -7,25 +7,28 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { SelectorLenguages } from "./Components/SelectorLenguages";
+
 function App() {
-  const { fromLanguage, toLanguage, interChangeLanguages } = useStore();
+  const { fromLanguage, toLanguage, interChangeLanguages, setFromLanguage, setToLanguage } = useStore();
+
   return (
     <Container fluid>
       <h1 className="mb-2 font-bold text-2xl font-roboto">Google Clon translate</h1>
       <Row>
         <Col>
-          <h2>From</h2>
+          <SelectorLenguages onChange={setFromLanguage} value={fromLanguage} />
           {fromLanguage}
         </Col>
 
         <Col>
-          <Button disabled={fromLanguage === 'auto'} variant="link" onClick={interChangeLanguages} className="text-black">
+          <Button  variant="link" onClick={interChangeLanguages} className="text-black">
             <FaExchangeAlt />
           </Button>
         </Col>
 
         <Col>
-          <h2>To</h2>
+          <SelectorLenguages onChange={setToLanguage} value={toLanguage} />
           {toLanguage}
         </Col>
       </Row>
