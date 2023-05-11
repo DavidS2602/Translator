@@ -11,3 +11,5 @@ export const SUPPORTED_LANGUAGES = {
     ar: "Arabic",
 }
 
+export const AUTO_LENGUAGE = "auto"
+
