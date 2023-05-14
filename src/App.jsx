@@ -16,6 +16,7 @@ function App() {
     toLanguage,
     fromText,
     result,
+    loading,
     setFromText,
     setResult,
     interChangeLanguages,
@@ -65,6 +66,7 @@ function App() {
             autoFocus
             value={result}
             onChange={setResult}
+            loading={loading}
           />
         </Col>
       </Row>
