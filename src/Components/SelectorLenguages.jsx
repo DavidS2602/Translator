@@ -8,7 +8,7 @@ export const SelectorLenguages = ({ onChange, value, showDetect }) => {
     }
 
     return (
-        <Form.Select aria-label="Select language" onChange={handleChange} value={value}>
+        <Form.Select className="bg-transparent border-2 border-gray-400 text-gray-200" aria-label="Select language" onChange={handleChange} value={value}>
             {showDetect && <option value={AUTO_LENGUAGE}>Detect language</option>}
             {Object.entries(SUPPORTED_LANGUAGES).map(([key, literal]) => (
                 <option key={key} value={key}>

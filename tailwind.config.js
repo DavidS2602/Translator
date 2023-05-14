@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'main': 'url("/src/assets/BG-MAIN.jpg")',
+        'second': 'url("/src/assets/BUILDS.jpg")',
+      },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],

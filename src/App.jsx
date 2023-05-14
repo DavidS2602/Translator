@@ -8,20 +8,23 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { SelectorLenguages } from "./Components/SelectorLenguages";
-import { Form } from "react-bootstrap";
-import { useState } from "react";
+import { TextArea } from "./Components/TextArea";
 
 function App() {
   const {
     fromLanguage,
     toLanguage,
+    fromText,
+    result,
+    setFromText,
+    setResult,
     interChangeLanguages,
     setFromLanguage,
     setToLanguage,
   } = useStore();
 
   return (
-    <Container fluid>
+    <Container fluid className="border-3 border-gray-400 p-4 rounded-4">
       <h1 className="mb-2 font-bold text-2xl font-roboto">
         Google Clon translate
       </h1>
@@ -32,11 +35,12 @@ function App() {
             value={fromLanguage}
             showDetect={true}
           />
-          <Form.Control
+          <TextArea
             as="textarea"
             placeholder="Enter text"
             autoFocus
-            className="h-[150px] mt-2"
+            value={fromText}
+            onChange={setFromText}
           />
         </Col>
 
@@ -56,11 +60,11 @@ function App() {
             value={toLanguage}
             showDetect={false}
           />
-          <Form.Control
-            as="textarea"
+          <TextArea
             placeholder="Traduction"
             autoFocus
-            className="h-[150px] mt-2"
+            value={result}
+            onChange={setResult}
           />
         </Col>
       </Row>
