@@ -1,9 +1,19 @@
 import { Form } from "react-bootstrap";
 
+const getPlaceholder = (loading, result) => {
+    if (loading) return "Translating..."
+    if (result === "")  return "Translation"
+    return "Translation"
+}
 
-export const TextArea = ({ autofocus ,placeholder, loading,  value, onChange }) => {
-    const handleChange = (event) => {
-        onChange(event.target.value);
+export const TextArea = ({
+    autofocus,
+    loading,
+    value,
+    onChange,
+}) => {
+    const handleChange = (e) => {
+        onChange(e.target.value);
     }
     return (
         <Form.Control
@@ -11,10 +21,11 @@ export const TextArea = ({ autofocus ,placeholder, loading,  value, onChange }) 
             autoFocus={autofocus}
             as="textarea" //Element to render
             rows={3}
-            placeholder={placeholder}
-            style={{ height: '150px', marginTop: '8px' }}
+            placeholder={getPlaceholder(loading, value)}
+            style={{ height: "150px", marginTop: "8px" }}
             value={value}
             onChange={handleChange}
+            loading={loading}
         />
-    )
-}
+    );
+};

@@ -22,16 +22,25 @@ function reducer(state, action) {
     }
 
     if (type === "SET_FROM_LANGUAGE") {
+        if(state.fromLanguage === payload) return state;
+
+        const loading = state.fromText.length !== '';
         return {
             ...state,
             fromLanguage: payload,
+            result: "",
+            loading,
         };
     }
 
     if (type === "SET_TO_LANGUAGE") {
+        if(state.toLanguage === payload) return state;
+        const loading = state.fromText.length !== '';
         return {
             ...state,
             toLanguage: payload,
+            result: "",
+            loading,
         };
     }
 

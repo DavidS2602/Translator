@@ -9,6 +9,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { SelectorLenguages } from "./Components/SelectorLenguages";
 import { TextArea } from "./Components/TextArea";
+import { useEffect } from "react";
+import { translate } from "./Services/Translate";
 
 function App() {
   const {
@@ -24,8 +26,19 @@ function App() {
     setToLanguage,
   } = useStore();
 
+  useEffect(() => {
+    if (fromText === '') return
+
+    translate({fromLanguage, toLanguage, text:fromText})
+    .then(result => {
+      if (result === null) return
+      setResult(result)
+    })
+    .catch(() => setResult('Error'))
+  }, [fromText, fromLanguage, toLanguage])
+
   return (
-    <Container fluid className="border-3 border-gray-400 p-4 rounded-4">
+    <Container fluid className="border-3 border-gray-400 p-4 rounded-4 backdrop-blur-sm">
       <h1 className="mb-2 font-bold text-2xl font-roboto">
         Google Clon translate
       </h1>
