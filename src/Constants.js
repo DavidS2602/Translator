@@ -9,6 +9,9 @@ export const SUPPORTED_LANGUAGES = {
     zh: "Chinese",
     ja: "Japanese",
     ar: "Arabic",
+    hi: "Hindi",
+    tr: "Turkish",
+    uk: "Ukrainian",
 }
 
 export const AUTO_LENGUAGE = "auto"
