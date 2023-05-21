@@ -10,6 +10,9 @@ export default {
         'main': 'url("/src/assets/BG-MAIN.jpg")',
         'second': 'url("/src/assets/BUILDS.jpg")',
       },
+      screens: {
+        'container': '150px'
+      },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],

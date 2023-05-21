@@ -1,8 +1,8 @@
 import {ChatCompletionRequestMessageRoleEnum,Configuration,OpenAIApi} from "openai";
 import { SUPPORTED_LANGUAGES } from "./../Constants";
+import { apiKey } from './config';
 
-const apikey = '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'
-const configuration = new Configuration({ apiKey: apikey})
+const configuration = new Configuration({ apiKey })
 const openai = new OpenAIApi(configuration);
 
 export async function translate({ fromLanguage, toLanguage, text }) {

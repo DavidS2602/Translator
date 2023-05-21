@@ -58,7 +58,7 @@ function App() {
     <>
       <Container
         fluid
-        className="border-3 border-gray-400 p-4 rounded-4 backdrop-blur-sm relative"
+        className="border-3 border-gray-400 p-4 rounded-4 backdrop-blur-sm fixed max-w-xl"
       >
         <h1 className="mb-2 font-bold text-2xl font-roboto">
           Google Clon translate
@@ -123,7 +123,7 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <Toaster position="botton-center" expand={true} richColors success />
+      <Toaster position="bottom-center" expand={true} richColors success />
     </>
   );
 }
