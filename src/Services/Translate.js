@@ -1,6 +1,6 @@
 import {ChatCompletionRequestMessageRoleEnum,Configuration,OpenAIApi} from "openai";
 import { SUPPORTED_LANGUAGES } from "./../Constants";
-import { apiKey } from './config';
+import { apiKey } from "./config"
 
 const configuration = new Configuration({ apiKey })
 const openai = new OpenAIApi(configuration);
